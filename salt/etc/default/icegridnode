@@ -1,0 +1,11 @@
+# Defaults for icegridnode initscript
+# sourced by /etc/init.d/icegridnode
+# installed at /etc/default/icegridnode by the maintainer scripts
+
+# start icegridnode at init (1) or not (other)
+# Please edit /etc/icegridnode.conf before enabling
+START_ICEGRIDNODE=1
+
+# IceGrid Registry credentials
+IG_USER="user"
+IG_PASS="pass"
