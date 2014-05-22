@@ -10,12 +10,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "shared", "/shared", owner: "root"
 
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-  config.vm.provision :shell, :path => "bootstrap/run.sh"
+  config.vm.provision :shell, :path => "bootstrap.sh"
 
-  config.vm.define "node1" do |node|
+  config.vm.define :node1 do |node|
     node.vm.box = "deb/jessie"
     config.vm.hostname = "node1"
     config.vm.synced_folder "salt", "/srv/salt"
     config.vm.network "public_network"
+
+    config.vm.provider :virtualbox do |vb|
+      vb.name = "node1"
+    end
   end
 end

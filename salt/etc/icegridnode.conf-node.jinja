@@ -1,5 +1,5 @@
 Ice.Default.Locator=IceGrid/Locator:tcp -h node1.local -p 4061
-IceGrid.Node.Name=grid-node2
+IceGrid.Node.Name=grid-{{ grains.host }}
 IceGrid.Node.Endpoints=tcp
 IceGrid.Node.Data=/var/lib/ice/icegrid/node
 IceGrid.Node.Output=/var/lib/ice/icegrid/node

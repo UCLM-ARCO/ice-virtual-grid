@@ -1,5 +1,6 @@
 base:
   'node*':
+    - salt_setup
     - babel
     - common
     - ice
